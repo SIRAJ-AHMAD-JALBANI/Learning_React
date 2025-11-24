@@ -1,0 +1,12 @@
+What Is the Overall Purpose of Testing Your Applications?
+Up until this point, you have been building tons of small projects in languages like HTML, CSS, JavaScript, and more. But how do you know if your projects are working correctly?
+
+One option is to do what is called manual testing. This is where a tester will go through each part of the application and test out all of the different features to make sure it works correctly. If any bugs are uncovered in the testing process, the tester will report those bugs back to the software team so they can be fixed.
+
+While it is important to manually test out your applications, often times it will not be enough. Real-world applications involve many components and services and can often be complex in nature. So only relying on manual testing will result in many bugs lying beneath the surface that can hurt the usability and maintainability of an application.
+
+This is where automated testing comes in. You can write separate test code to check whether your application behaves as expected, without needing to manually click through it. Both manual and automated tests can be grouped into different types, depending on what they are testing.
+
+Over the next few lessons, we are going to cover the different types of testing used in the industry like unit testing, end-to-end testing, functional testing and more.
+
+Writing tests for your applications will help ensure that your code is doing what it is supposed to be doing. It is important that you start to familiarize yourself with the basics of testing because it will be something that you will need in a developer job.
