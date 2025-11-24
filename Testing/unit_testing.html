@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>What Is Unit Testing?</h1>
+
+<p>
+  As you design your applications, you will often have a series of small functions
+  responsible for one thing. This is known as the 
+  <strong>single responsibility principle</strong>. When you have a series of small 
+  functions, it is best to test these functions to ensure that everything works as expected. 
+  In this lesson, we will take a look at how to create a unit test using the popular 
+  Jest testing framework.
+</p>
+
+<h2>Example Function</h2>
+
+<p>
+  In this example, we are going to create a function that is responsible for returning 
+  a newly formatted string:
+</p>
+
+<pre><code>export function getFormattedWord(str) {
+  if (!str) return '';
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+</code></pre>
+
+<p>
+  This <code>getFormattedWord</code> function has a parameter called <code>str</code> 
+  and will first check if <code>str</code> is empty. If so, then an empty string is 
+  returned. Otherwise, a new string is returned where the first letter is capitalized. 
+  We are exporting this function so we can use it in a test file.
+</p>
+
+<h2>Creating a Test File</h2>
+
+<p>
+  In a separate <code>getFormattedWord.test.js</code> file, we can write some tests to verify 
+  that the function is doing what it is supposed to be doing.
+</p>
+
+<p>At the top of the test file, import the function like this:</p>
+
+<pre><code>import { getFormattedWord } from "./getFormattedWord.js";
+</code></pre>
+
+<p>
+  Then install Jest using:
+</p>
+
+<pre><code>npm i jest
+</code></pre>
+
+<p>
+  Now add a test to check that <code>"hello"</code> is formatted to <code>"Hello"</code>:
+</p>
+
+<pre><code>test('capitalizes the first letter of a word', () => {
+  expect(getFormattedWord('hello')).toBe('Hello');
+});
+</code></pre>
+
+<p>
+  The <code>expect</code> function is used to test a value. It is combined with a 
+  <strong>matcher</strong>, which checks whether the value behaves as expected. 
+  Here the matcher is <code>toBe()</code>. Jest has many matchers for strings, numbers,
+  truthiness, and more.
+</p>
+
+<h2>Running Your Tests</h2>
+
+<p>Add this script in your <code>package.json</code>:</p>
+
+<pre><code>"scripts": {
+  "test": "jest"
+},
+</code></pre>
+
+<p>Then run:</p>
+
+<pre><code>npm run test
+</code></pre>
+
+<p>If the test passes, your terminal may show something like:</p>
+
+<pre><code>PASS ./getFormattedWord.test.js
+  ✓ capitalizes the first letter of a word (1 ms)
+</code></pre>
+
+<h2>Example of a Failing Test</h2>
+
+<p>
+  Now intentionally break the function:
+</p>
+
+<pre><code>export function getFormattedWord(str) {
+  if (!str) return '';
+  return "This is incorrect";
+}
+</code></pre>
+
+<p>
+  When you run the tests again, the output will show a failure:
+</p>
+
+<pre><code>FAIL ./getFormattedWord.test.js
+  ✕ capitalizes the first letter of a word (1 ms)
+
+  ● capitalizes the first letter of a word
+
+  Expected: "Hello"
+  Received: "This is incorrect"
+</code></pre>
+
+<h2>Fixing the Function</h2>
+
+<p>Return the correct version:</p>
+
+<pre><code>export function getFormattedWord(str) {
+  if (!str) return '';
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+</code></pre>
+
+<h2>Adding Another Test</h2>
+
+<p>
+  Add a test for cases when no argument is provided:
+</p>
+
+<pre><code>test("returns an empty string when no argument is provided", () => {
+  expect(getFormattedWord()).toBe("");
+});
+</code></pre>
+
+<h2>Conclusion</h2>
+
+<p>
+  There are many more tests you can write to make the function more robust, but these 
+  first tests are a good introduction to unit testing. Popular JavaScript testing 
+  frameworks include Jest, Mocha, and Vitest.
+</p>
+
+<p>
+  Unit testing is important because it helps you catch bugs early and ensures that 
+  everything works as expected. It also acts as documentation for your application, 
+  showing what the expected behavior should be.
+</p>
+
+</body>
+</html>
