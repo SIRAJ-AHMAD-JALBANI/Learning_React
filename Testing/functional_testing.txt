@@ -1,0 +1,14 @@
+What Is Functional Testing, and How Does It Differ from Unit Testing?
+In prior lessons, you learned how to test small units of code through unit testing. Well, unit testing is part of functional testing. Functional testing checks if the features and functions of the application work as expected.
+
+In this lesson, we will take a look at the differences between functional and non-functional testing.
+
+The goal of functional testing is to test the system as a whole against multiple scenarios to ensure that the system works as expected. An example of functional testing would be smoke testing. Smoke testing is where you perform a preliminary check on the system for basic or critical issues before more extensive testing is done.
+
+In contrast, non-functional testing focuses on things like performance and reliability.
+
+A real test scenario for functional testing would be a user login. A user should be able to log in to the application with their username and password. If successful, they should be able to access their account information. If there is an issue, then that error needs to be handled properly. When you are writing tests, you need to account for all types of success and failure scenarios.
+
+An example of non-functional testing would be to test the performance of your application under different network conditions. In a future lesson, you will learn more about performance testing.
+
+The reasons why functional testing is so important is because you want to identify bugs early on in your application. You also want to make sure that your application meets the requirements that were laid out at the beginning of the planning phase. Lastly, you want to ensure that your users have a good user experience. Users should not struggle to use your application or be blocked by broken features and system failures.
